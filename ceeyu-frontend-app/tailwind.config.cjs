@@ -11,19 +11,10 @@ module.exports = {
   theme: {
     screens: {
       "sm": "640px",
-      // => @media (min-width: 640px) { ... }
-
       "md": "768px",
-      // => @media (min-width: 768px) { ... }
-
       "lg": "1024px",
-      // => @media (min-width: 1024px) { ... }
-
       "xl": "1280px",
-      // => @media (min-width: 1280px) { ... }
-
       "2xl": "1536px",
-      // => @media (min-width: 1536px) { ... }
     },
     spacing: {
       "sm": "2px",
@@ -82,6 +73,7 @@ module.exports = {
         lg: "16px",
       },
       colors: {
+
         "blue": {
           100: "#6486FF",
           200: "#4A72FF",
@@ -163,6 +155,8 @@ module.exports = {
           500: "#FAFBFC",
           600: "#F2F3F5",
         },
+        'main-bg-color': '#F5F6F7', 
+        'accent-color': '#FFDE7E',   
       },
 
       fontSize: {
