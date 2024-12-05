@@ -19,13 +19,16 @@
           <span class="font-bold text-blue-600">{{ product.details.price.toFixed(2) }}$</span>
           <span class="text-sm text-gray-500">{{ product.details.company }}</span>
         </div>
-  
-        <button
-          @click="goToDetails"
-          class="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded transition-colors duration-200 ease-in-out"
-        >
-          View Details
-        </button>
+        
+        <div class="flex flex-row items-center justify-between w-[400px] max-w-[400px]">
+            <button
+                @click="goToDetails"
+                class="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded transition-colors duration-200 ease-in-out"
+            >
+                View Details
+            </button>
+            
+        </div>
       </div>
     </div>
   </template>

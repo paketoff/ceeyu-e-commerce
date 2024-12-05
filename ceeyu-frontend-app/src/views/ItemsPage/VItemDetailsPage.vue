@@ -30,13 +30,20 @@
           <p class="text-sm text-gray-400">Updated at: {{ product.details.updatedAt }}</p>
           <p class="text-sm text-gray-400">DOB: {{ product.details.dob }}</p>
         </div>
-  
-        <button
-          @click="addToCard"
-          class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded transition-colors duration-200 ease-in-out"
-        >
-          Add to Cart
-        </button>
+        <div class="flex flex-row items-center justify-between w-[400px] max-w-[400px]">
+          <button
+            @click="addToCard"
+            class=" bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded transition-colors duration-200 ease-in-out"
+          >
+            Add to Cart
+          </button>
+          <button
+            @click="goBack"
+            class=" bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded transition-colors duration-200 ease-in-out"
+          >
+            Go back
+          </button>
+        </div>
       </div>
   
       <div v-else class="text-center p-8 text-gray-500">
@@ -50,9 +57,13 @@
   import { useRoute } from 'vue-router';
   import { IProduct } from '@/types/common/product';
   import products from '@/mock/mock_items.js';
-  import { useCardStore } from '@/stores/shoppingCardStore'; // Импортируем хранилище корзины
+  import { useCardStore } from '@/stores/shoppingCardStore';
+  import { useRouter } from 'vue-router';
   
   const route = useRoute();
+  const router = useRouter();
+
+  // Anti-pattern below. Better to use props in this case IMHO. 
   const productId = route.params.product_id as string | undefined;
   
   const product = computed<IProduct | null>(() => {
@@ -74,6 +85,11 @@
     } else {
       alert('Product not found');
     }
+  }
+
+  // this function should be saved in a folder similar to "utils"
+  function goBack() {
+    router.go(-1);
   }
   </script>
   
