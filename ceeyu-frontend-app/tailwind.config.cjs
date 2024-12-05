@@ -155,7 +155,7 @@ module.exports = {
           500: "#FAFBFC",
           600: "#F2F3F5",
         },
-        'main-bg-color': '#F5F6F7', 
+        'main-bg-color': '#D3D3D3', 
         'accent-color': '#FFDE7E',   
       },
 
