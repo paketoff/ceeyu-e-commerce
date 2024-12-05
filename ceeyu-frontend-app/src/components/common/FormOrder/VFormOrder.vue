@@ -1,0 +1,1 @@
+<!-- A vue-form page for filling an order information. -->

@@ -1,0 +1,1 @@
+<!-- Wrapper that contains header, main content and footer. -->
