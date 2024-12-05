@@ -2,10 +2,13 @@
 <script setup lang="ts">
 import VHeader from '@/components/App/Header/VHeader.vue';
 import VFooter from '@/components/App/Footer/VFooter.vue';
+
+
+
 </script>
  
  <template>
-    <div class="flex min-h-screen w-full bg-white">
+    <div class="flex flex-col items-center justify-center min-h-screen w-full bg-white">
       <!-- HEADER -->
       <VHeader />
 

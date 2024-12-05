@@ -1,5 +1,6 @@
 <!-- Main component that contains all other components -->
 <script setup lang="ts">
+import VItemsPage from '@/views/ItemsPage/VItemsPage.vue';
 import VPageWrapper from './common/Wrappers/VPageWrapper.vue';
 
 
@@ -8,6 +9,7 @@ import VPageWrapper from './common/Wrappers/VPageWrapper.vue';
 <template>
     <div>
          <VPageWrapper>
+            <VItemsPage ></VItemsPage>
          </VPageWrapper>
     </div>
 </template>

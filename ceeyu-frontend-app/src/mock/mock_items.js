@@ -1,4 +1,4 @@
-[
+export default [
     {
       "id": "63f48ddb95ba1d0993a87c80",
       "name": "labore aute",
