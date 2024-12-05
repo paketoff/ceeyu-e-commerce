@@ -5,7 +5,7 @@ import VFooter from '@/components/App/Footer/VFooter.vue';
 </script>
  
  <template>
-    <div class="flex min-h-screen w-full">
+    <div class="flex min-h-screen w-full bg-white">
       <!-- HEADER -->
       <VHeader />
 

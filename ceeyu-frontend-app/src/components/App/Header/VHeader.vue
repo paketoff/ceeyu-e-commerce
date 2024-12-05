@@ -22,14 +22,14 @@ const goToCart = () => {
 </script>
 
 <template>
-    <div class="flex w-full items-stretch flex-grow border-b border-main-bg-color">
+    <div class="flex flex-row items-center justify-between h-[50px] max-h-[50px] w-full border-b-2 border-bg-main-color">
         <div>
             <VLeftLogo icon="random" name="Ceeyu"/>
         </div>
-        <div class="flex items-stretch">
-            <VIconButton search-button  v-model="searchStore.searchQuery" size="medium" />
-            <VIconButton icon="mdiCart" @customClick="goToCart" size="medium" />
-            <VIconButton icon="mdiAccount" size="medium" />           
+        <div class="flex flex-row items-center justify-end flex-grow ">
+            <VIconButton search-button v-model="searchStore.searchQuery" size="small" />
+            <VIconButton icon="mdiCart" @customClick="goToCart" size="large" />
+            <VIconButton icon="mdiAccount" size="large" />           
         </div>
     </div>
 </template>
