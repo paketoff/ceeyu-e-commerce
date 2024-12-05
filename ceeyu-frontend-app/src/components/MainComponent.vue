@@ -2,6 +2,7 @@
 <script setup lang="ts">
 import VItemsPage from '@/views/ItemsPage/VItemsPage.vue';
 import VPageWrapper from './common/Wrappers/VPageWrapper.vue';
+import { RouterLink, RouterView } from 'vue-router'
 
 
 </script>
@@ -9,7 +10,7 @@ import VPageWrapper from './common/Wrappers/VPageWrapper.vue';
 <template>
     <div>
          <VPageWrapper>
-            <VItemsPage ></VItemsPage>
+            <router-view />
          </VPageWrapper>
     </div>
 </template>

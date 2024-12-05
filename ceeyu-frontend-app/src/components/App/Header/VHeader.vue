@@ -22,7 +22,7 @@ const goToCart = () => {
 </script>
 
 <template>
-    <div class="flex flex-row items-center justify-between h-[50px] max-h-[50px] w-full border-b-2 border-bg-main-color">
+    <div class="flex flex-row items-center justify-between h-[50px] max-h-[50px] w-full border-b border-bg-main-color">
         <div>
             <VLeftLogo icon="random" name="Ceeyu"/>
         </div>
