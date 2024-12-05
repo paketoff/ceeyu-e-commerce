@@ -16,7 +16,7 @@ const searchStore = useSearchStore();
 const goToCart = () => {
 
     // Router-name should be created in a different .js file that contains a big map-object with "ROUTE.BUCKET" : "/bucket" view, so we could use it like 'router.push(ROUTE.BUCKET)' and use incapsulation.
-    router.push('/bucket');
+    router.push('/shopping-card');
 }
 
 </script>
