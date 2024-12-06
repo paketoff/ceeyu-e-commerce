@@ -84,6 +84,12 @@ import VPageWrapper from '@/components/common/Wrappers/VPageWrapper.vue';
   const showModal = ref(false);
   
   const cartItems = computed(() => cartStore.items);
+  // Potential incorrect use-case of the reactivity (creating reacting wrapper on already reactive object from the store)
+  // const cartState = reactive({
+  //   items: cartStore.items,
+  //   total: 0
+  // });
+
   const totalPrice = computed(() => {
     let total = 0;
     for (const product of cartItems.value) {

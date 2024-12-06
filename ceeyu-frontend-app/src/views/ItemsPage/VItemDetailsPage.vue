@@ -7,12 +7,10 @@
         
         <div class="w-full h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
           <img 
-            v-if="productImage"
-            :src="productImage"
+            src="/Users/paketoff/Desktop/ceeyu_test/ceeyu-e-commerce/ceeyu-frontend-app/src/assets/img/product_img.jpg"
             :alt="product.name"
             class="object-contain h-full"
           />
-          <div v-else class="text-gray-500 italic">No Image</div>
         </div>
   
         <p class="text-gray-700">

@@ -3,7 +3,7 @@
       <div class="flex items-center justify-center w-full h-full py-[5%]">
         <div class="w-1/2 h-1/2 grid grid-cols-3 gap-4 overflow-auto">
           <VProductCard
-            v-for="item in items"
+            v-for="item in filteredItems"
             :key="item.id"
             :product="item"
           />
@@ -20,7 +20,21 @@ import { useSearchStore } from '@/stores/searchStore';
 import { computed, onMounted, ref } from 'vue';
 import VPageWrapper from '@/components/common/Wrappers/VPageWrapper.vue';
 
+
+const searchStore = useSearchStore();
 const items = ref<IProduct[]>(products);
+
+const filteredItems = computed(() => {
+  const query = searchStore.searchQuery.trim().toLowerCase();
+  if (!query) {
+    return items.value;
+  }
+  return items.value.filter(item =>
+    item.name.toLowerCase().includes(query) ||
+    item.details.company.toLowerCase().includes(query)
+  );
+});
+
 
 
 onMounted(() => {

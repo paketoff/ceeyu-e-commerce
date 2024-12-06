@@ -16,13 +16,13 @@ src/views/MainPage.vue
           </router-link>
         </div>
         
-        <div class="md:w-1/2 p-8">
+        <!-- <div class="md:w-1/2 p-8">
           <img
             src="https://via.placeholder.com/500"
             alt="Ceeyu Products"
             class="w-full h-auto rounded-lg shadow-lg"
           />
-        </div>
+        </div> -->
       </section>
       
     </div>

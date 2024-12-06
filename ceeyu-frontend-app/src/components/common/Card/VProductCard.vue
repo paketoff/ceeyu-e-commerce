@@ -1,14 +1,12 @@
 <template>
     <div class="border rounded shadow p-4 overflow-hidden cursor-pointer">
       <div class="transform transition-transform duration-200 hover:scale-105 flex flex-col items-start">
-        <div class="w-full h-40 mb-4 overflow-hidden flex justify-center items-center bg-gray-100">
+        <div class="w-full h-400 mb-4 overflow-hidden flex justify-center items-center bg-gray-100">
           <img
-            v-if="productImage"
-            :src="productImage"
+            src="/Users/paketoff/Desktop/ceeyu_test/ceeyu-e-commerce/ceeyu-frontend-app/src/assets/img/product_img.jpg"
             :alt="product.name"
             class="object-contain h-full"
           />
-          <div v-else class="text-gray-500 italic">No Image</div>
         </div>
   
         <h2 class="text-lg font-semibold mb-2">{{ product.name }}</h2>
