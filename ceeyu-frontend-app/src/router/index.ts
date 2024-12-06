@@ -3,6 +3,7 @@ import MainComponent from '@/components/MainComponent.vue'
 import VItemsPage from '@/views/ItemsPage/VItemsPage.vue'
 import VItemDetailsPage from '@/views/ItemsPage/VItemDetailsPage.vue'
 import VShoppingCart from '@/views/VShoppingCart/VShoppingCart.vue'
+import VMainPage from '@/views/MainPage/VMainPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,7 +11,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: MainComponent
+      component: VMainPage
     },
     {
       path: '/products',

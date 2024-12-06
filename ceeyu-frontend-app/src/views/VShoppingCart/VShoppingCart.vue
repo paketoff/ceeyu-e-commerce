@@ -1,5 +1,6 @@
 <!-- src/views/CartPage.vue -->
 <template>
+  <VPageWrapper>
     <div class="max-w-3xl mx-auto p-4">
       <h1 class="text-2xl font-bold mb-4">Your Shopping Cart</h1>
   
@@ -11,6 +12,7 @@
           :key="item.id" 
           class="flex items-center justify-between bg-white p-4 border rounded shadow"
         >
+         <div class="flex flex-col"> 
           <div class="flex flex-col">
             <span class="font-semibold">{{ item.name }}</span>
             <span class="text-sm text-gray-500">{{ item.details.company }}</span>
@@ -25,24 +27,24 @@
             </button>
           </div>
         </div>
+        </div>
   
-        <!-- Итого -->
+        <!-- Total (anti-pattern - I coul'd just extract those buttons below in an isolated component but it'll be kinda quicker for me to write it directly here)-->
         <div class="flex items-center justify-between mt-4 p-4 bg-gray-100 border rounded shadow">
           <span class="font-semibold">Total:</span>
           <span class="text-lg font-bold text-blue-600">{{ totalPrice.toFixed(2) }}$</span>
         </div>
   
-        <!-- Кнопки -->
-        <div class="flex items-center justify-between mt-4">
+        <div class="flex items-center justify-between gap-xl mt-4">
           <button
             @click="goBack"
-            class="bg-gray-300 hover:bg-gray-400 text-black font-semibold py-2 px-4 rounded transition-colors"
+            class="bg-gray-300 hover:bg-gray-400 text-black font-semibold py-2 px-4 rounded transition-colors max-h-[45px]"
           >
             Back
           </button>
           <button
             @click="confirmOrder"
-            class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded transition-colors"
+            class="bg-accent-color hover:bg-accent-color-hover text-white font-semibold py-2 px-4 rounded transition-colors max-h-[45px]"
           >
             Confirm order
           </button>
@@ -51,30 +53,30 @@
       <div v-else class="text-center text-gray-500 italic">
         Your cart is empty.
       </div>
-  
-      <!-- Модальное окно при подтверждении заказа -->
+      
+      <!-- MODAL -->
       <div v-if="showModal" class="fixed inset-0 flex items-center justify-center z-50">
-        <!-- Затемнённый фон -->
         <div class="absolute inset-0 bg-black bg-opacity-80"></div>
   
-        <!-- Сообщение в центре -->
         <div class="relative bg-white text-black p-8 rounded shadow z-10 max-w-sm w-full text-center">
-          <p class="text-xl font-bold mb-4">Sorry guys, I'm already too tired of doing this, no order form.</p>
+          <p class="text-xl font-bold mb-4">Sorry guys, I'm already too tired of doing this so no order form :)</p>
           <button
             @click="closeModal"
-            class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+            class="mt-4 bg-accent-color hover:bg-accent-color-hover text-white font-semibold py-2 px-4 rounded max-h-[45px] mb-1"
           >
             Close
           </button>
         </div>
       </div>
     </div>
+  </VPageWrapper>
   </template>
   
   <script setup lang="ts">
   import { computed, ref } from 'vue';
   import { useCardStore } from '@/stores/shoppingCardStore';
   import { useRouter } from 'vue-router';
+import VPageWrapper from '@/components/common/Wrappers/VPageWrapper.vue';
   
   const cartStore = useCardStore();
   const router = useRouter();
@@ -92,6 +94,7 @@
   
   function removeFromCart(productId: string) {
     cartStore.removeItem(productId);
+    // Potential wrong case of using reactivity here if I would use syntax something like cartStore.items.filter(...), explicitly. It violates the agreement of use pinia with vue.
   }
   
   function goBack() {

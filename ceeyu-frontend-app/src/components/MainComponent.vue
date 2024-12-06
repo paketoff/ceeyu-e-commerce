@@ -9,9 +9,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
     <div>
-         <VPageWrapper>
-            <router-view />
-         </VPageWrapper>
+        <router-view />
     </div>
 </template>
 

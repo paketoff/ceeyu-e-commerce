@@ -1,5 +1,6 @@
 <!-- ProductDetailsPage.vue -->
 <template>
+  <VPageWrapper>
     <div class="max-w-3xl mx-auto p-4">
       <div v-if="product" class="flex flex-col space-y-4">
         <h1 class="text-2xl font-bold">{{ product.name }}</h1>
@@ -26,20 +27,20 @@
         </div>
         
         <div class="flex flex-col space-y-2">
-          <p class="text-sm text-gray-400">Created at: {{ product.details.createdAt }}</p>
-          <p class="text-sm text-gray-400">Updated at: {{ product.details.updatedAt }}</p>
-          <p class="text-sm text-gray-400">DOB: {{ product.details.dob }}</p>
+          <p class="text-l">Created at: {{ product.details.createdAt }}</p>
+          <p class="text-l">Updated at: {{ product.details.updatedAt }}</p>
+          <p class="text-l">DOB: {{ product.details.dob }}</p>
         </div>
-        <div class="flex flex-row items-center justify-between w-[400px] max-w-[400px]">
+        <div class="flex flex-row items-center justify-start gap-2xl w-[400px] max-w-[400px]">
           <button
             @click="addToCard"
-            class=" bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded transition-colors duration-200 ease-in-out"
+            class=" bg-accent-color hover:bg-accent-color-hover text-white font-semibold py-2 px-4 rounded transition-colors duration-200 ease-in-out max-h-[45px]"
           >
             Add to Cart
           </button>
           <button
             @click="goBack"
-            class=" bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded transition-colors duration-200 ease-in-out"
+            class=" bg-accent-color hover:bg-accent-color-hover text-white font-semibold py-2 px-4 rounded transition-colors duration-200 ease-in-out max-h-[45px]"
           >
             Go back
           </button>
@@ -50,6 +51,7 @@
         Product not found
       </div>
     </div>
+  </VPageWrapper>
   </template>
   
   <script setup lang="ts">
@@ -59,6 +61,7 @@
   import products from '@/mock/mock_items.js';
   import { useCardStore } from '@/stores/shoppingCardStore';
   import { useRouter } from 'vue-router';
+import VPageWrapper from '@/components/common/Wrappers/VPageWrapper.vue';
   
   const route = useRoute();
   const router = useRouter();
@@ -78,6 +81,7 @@
   
   const cardStore = useCardStore(); 
   
+  // TODO: use toastr
   function addToCard() {
     if (product.value) {
       cardStore.addItem(product.value); 

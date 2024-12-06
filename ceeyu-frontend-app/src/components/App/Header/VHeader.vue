@@ -6,12 +6,7 @@ import { useRouter } from 'vue-router';
 import { useSearchStore } from '@/stores/searchStore';
 
 const router = useRouter();
-// const showSearch = ref(false);
 const searchStore = useSearchStore(); 
-
-// const toggleSearch = () => {
-//     showSearch.value = !showSearch.value;
-// }
 
 const goToCart = () => {
 
@@ -26,7 +21,7 @@ const goToCart = () => {
         <div>
             <VLeftLogo icon="random" name="Ceeyu"/>
         </div>
-        <div class="flex flex-row items-center justify-end flex-grow ">
+        <div class="flex flex-row items-center justify-end flex-grow gap-xl pr-xl">
             <VIconButton search-button v-model="searchStore.searchQuery" size="small" />
             <VIconButton icon="mdiCart" @customClick="goToCart" size="large" />
             <VIconButton icon="mdiAccount" size="large" />           

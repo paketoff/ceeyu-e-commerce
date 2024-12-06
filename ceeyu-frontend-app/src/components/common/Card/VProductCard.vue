@@ -23,11 +23,10 @@
         <div class="flex flex-row items-center justify-between w-[400px] max-w-[400px]">
             <button
                 @click="goToDetails"
-                class="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-3 rounded transition-colors duration-200 ease-in-out"
+                class="mt-4 inline-block bg-accent-color hover:bg-accent-color-hover text-white font-semibold py-1 px-3 rounded transition-colors duration-200 ease-in-out"
             >
                 View Details
             </button>
-            
         </div>
       </div>
     </div>

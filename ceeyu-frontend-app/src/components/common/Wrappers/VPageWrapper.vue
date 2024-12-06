@@ -8,11 +8,13 @@ import VFooter from '@/components/App/Footer/VFooter.vue';
 </script>
  
  <template>
-    <div class="flex flex-col items-center justify-center min-h-screen w-full bg-white">
+    <div class="flex flex-col items-center justify-center min-h-screen w-full bg-main-bg-color">
       <!-- HEADER -->
       <VHeader />
 
       <!-- MAIN RE-USABLE CONTENT -->
+      <h2 class="flex flex-col items-center justify-center mt-2">Our ✨Products✨</h2>
+
       <main class="flex flex-grow">
          <slot></slot>
       </main>
